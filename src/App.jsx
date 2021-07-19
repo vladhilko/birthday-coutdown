@@ -1,4 +1,4 @@
-
+import './App.css';
 import Birthday from "./Birthday"
 
 function App() {

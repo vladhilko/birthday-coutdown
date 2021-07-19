@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types';
+
 function Countdown({ countdownData, name }) {
   return (
     <div>
       <h1 className="heading">
-        Countdown to <span>{name}'s</span> Birthday! 🎂🎉
+        Countdown to <span>{name}&apos;s</span> Birthday! 🎂🎉
       </h1>
 
       <div className="countdown-wrapper">
@@ -27,5 +29,25 @@ function Countdown({ countdownData, name }) {
     </div>
   );
 }
+
+Countdown.propTypes = {
+  countdownData: PropTypes.shape({
+    days: PropTypes.number,
+    hours: PropTypes.number,
+    minutes: PropTypes.number,
+    seconds: PropTypes.number
+  }).isRequired,
+  name: PropTypes.string
+};
+
+Countdown.defaultProps = {
+  countdownData: {
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  },
+  name: "User"
+};
 
 export default Countdown;
