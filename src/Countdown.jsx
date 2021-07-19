@@ -5,7 +5,7 @@ function Countdown({ countdownData = { days: 0, hours: 0, minutes: 0, seconds: 0
   return (
     <div>
       <h1 className="heading">
-        Countdown to <span>{name}&apos;s</span> Birthday! 🎂🎉
+        Countdown to <span className="highlight">{name}&apos;s</span> Birthday! 🎂🎉
       </h1>
 
       <div className="countdown-wrapper">
