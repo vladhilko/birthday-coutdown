@@ -4,7 +4,7 @@ Made with React.
 
 ## Getting started
 
-You can view a live demo over at http://localhost:5173/
+You can view a live demo over at https://react-birthday-countdown.netlify.app
 
 To get It running locally:
 
@@ -14,10 +14,10 @@ To get It running locally:
 
 ## Usage:
 
-Visit [http://localhost:5173/]()
+Visit [https://react-birthday-countdown.netlify.app]()
 
 Click on Generate Link
-or Head to [http://localhost:5173/generate]()
+or Head to [https://react-birthday-countdown.netlify.app/generate]()
 
 Enter the `name , day , month of birthday`
 
