@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Countdown from "./Countdown";
 
-
-function Birthday() {
+function Birthday({ name = 'Nic', month = 12, day = 1 }) {
   const [countdownData, setCountdownData] = useState({
     seconds: 0,
     hours: 0,
     minutes: 0,
     days: 0,
   });
-
-  const name = 'Nic';
-  const month = 12;
-  const day = 1;
 
   const currentYear = new Date().getFullYear();
 
@@ -53,13 +50,40 @@ function Birthday() {
     return () => clearInterval(interval);
   }, [currentYear, day, month]);
 
+  const monthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+  let fullMonthBirtday = monthNames[month-1];
+
   return (
     <>
       <div className='page'>
         <Countdown countdownData={countdownData} name={name} />
+        <div className='birthdate'>
+          Birthday: {fullMonthBirtday} {day}, {currentYear}
+        </div>
+        <Link to="/generate">Generate New Birthday</Link>
       </div>
     </>
   );
 }
+
+
+Birthday.propTypes = {
+  name: PropTypes.string,
+  month: PropTypes.number,
+  day: PropTypes.number
+};
 
 export default Birthday;

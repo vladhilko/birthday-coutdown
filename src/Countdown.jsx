@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
-function Countdown({ countdownData, name }) {
+function Countdown({ countdownData = { days: 0, hours: 0, minutes: 0, seconds: 0 },
+  name = "User"}) {
   return (
     <div>
       <h1 className="heading">
@@ -38,16 +39,6 @@ Countdown.propTypes = {
     seconds: PropTypes.number
   }).isRequired,
   name: PropTypes.string
-};
-
-Countdown.defaultProps = {
-  countdownData: {
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  },
-  name: "User"
 };
 
 export default Countdown;
