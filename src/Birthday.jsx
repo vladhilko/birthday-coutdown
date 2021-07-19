@@ -10,6 +10,7 @@ function Birthday({ name = 'Nic', month = 12, day = 1 }) {
     minutes: 0,
     days: 0,
   });
+  const [isBirthdayToday, setIsBirthdayToday] = useState(false);
 
   const currentYear = new Date().getFullYear();
 
@@ -41,6 +42,13 @@ function Birthday({ name = 'Nic', month = 12, day = 1 }) {
       return birthdayThisYear;
     };
 
+    const checkIfBirthdayToday = () => {
+      const now = new Date();
+      return now.getDate() == day && now.getMonth() + 1 == month;
+    };
+
+    setIsBirthdayToday(checkIfBirthdayToday());
+
     const interval = setInterval(() => {
       const nextBirthday = getNextBirthday();
       const timeRemaining = calculateTimeRemaining(nextBirthday);
@@ -69,10 +77,18 @@ function Birthday({ name = 'Nic', month = 12, day = 1 }) {
   return (
     <>
       <div className='page'>
-        <Countdown countdownData={countdownData} name={name} />
-        <div className='birthdate'>
-          Birthday: {fullMonthBirtday} {day}, {currentYear}
-        </div>
+        {isBirthdayToday ? (
+          <div className='wish-message'>
+            Congratulations, {name}! Today is your birthday! 🎉🎂
+          </div>
+        ) : (
+          <>
+            <Countdown countdownData={countdownData} name={name} />
+            <div className='birthdate'>
+              Birthday: {fullMonthBirtday} {day}, {currentYear}
+            </div>
+          </>
+        )}
         <Link to="/generate">Generate New Birthday</Link>
       </div>
     </>

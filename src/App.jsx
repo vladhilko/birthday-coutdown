@@ -3,9 +3,14 @@ import Birthday from "./Birthday"
 import GeneratedBirthday from './GeneratedBirthday';
 import GenerateNewBirthday from './GenerateNewBirthday';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 function App() {
+  useEffect(() => {
+    document.title = "Birthday Countdown! 🎉";
+  }, []);
+
   return (
     <>
       <Router>

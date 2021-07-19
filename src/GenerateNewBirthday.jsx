@@ -7,8 +7,10 @@ function GenerateNewBirthday() {
   const [month, setMonth] = useState(1);
   const [link, setLink] = useState('');
 
+  const baseURL = import.meta.env.VITE_REACT_APP_BASE_URL;
+
   const generateLink = () => {
-    setLink(`http://localhost:5173/birthday/${name}/${day}/${month}`);
+    setLink(`${baseURL}/birthday/${name}/${day}/${month}`);
   };
 
   const handleNameChange = (e) => setName(e.target.value);
