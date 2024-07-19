@@ -14,10 +14,10 @@ To get It running locally:
 
 ## Usage:
 
-Visit [https://react-birthday-countdown.netlify.app]()
+Visit [https://react-birthday-countdown.netlify.app](https://react-birthday-countdown.netlify.app)
 
 Click on Generate Link
-or Head to [https://react-birthday-countdown.netlify.app/generate]()
+or Head to [https://react-birthday-countdown.netlify.app/generate](https://react-birthday-countdown.netlify.app/generate)
 
 Enter the `name , day , month of birthday`
 
