@@ -16,8 +16,7 @@ To get It running locally:
 
 Visit [https://react-birthday-countdown.netlify.app](https://react-birthday-countdown.netlify.app)
 
-Click on Generate Link
-or Head to [https://react-birthday-countdown.netlify.app/generate](https://react-birthday-countdown.netlify.app/generate)
+Click on Generate New Birthday
 
 Enter the `name , day , month of birthday`
 
